@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Распознавание прошло успешно</title>
+</head>
+<body>
+<container-fluid>
+    <div class="mx-5">
+        <h1>Распознавание прошло успешно</h1>
+        <div class="my-5">
+            <h2>Результат распознавания: {{ number }}</h2>
+            {% if driver %}
+            <h3>Информация о водителе</h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    {% for data in driver %}
+                    <td>{{ data }}</td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+            {% endif %}
+            {% if region %}
+            <h3>Регион: {{ region }} </h3>
+            {% endif %}
+        </div>
+    </div>
+</container-fluid>
+</body>
+</html>
